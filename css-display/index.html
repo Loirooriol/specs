@@ -524,9 +524,17 @@ which dictates how the box participates in its parent formatting context.</p>
          <p>It is <a class="css" data-link-type="maybe" href="#valdef-display-inline-level" id="ref-for-valdef-display-inline-level-2">inline-level</a> and the <a data-link-type="dfn" href="#inner-display-type" id="ref-for-inner-display-type-5">inner display type</a> is <a class="css" data-link-type="maybe" href="#valdef-display-ruby" id="ref-for-valdef-display-ruby-3">ruby</a>.</p>
        </ul>
       <li data-md="">
-       <p>The <a data-link-type="dfn" href="#inner-display-type" id="ref-for-inner-display-type-6">inner display type</a>, if it is not <a class="css" data-link-type="maybe" href="#valdef-display-auto" id="ref-for-valdef-display-auto-3">auto</a> and the <a data-link-type="dfn" href="#outer-display-type" id="ref-for-outer-display-type-4">outer display type</a> is not <a data-link-type="dfn" href="#layout-internal" id="ref-for-layout-internal-1">layout-internal</a>.</p>
+       <p>The <a data-link-type="dfn" href="#inner-display-type" id="ref-for-inner-display-type-6">inner display type</a>, if none of the following holds:</p>
+       <ul>
+        <li data-md="">
+         <p>It is <a class="css" data-link-type="maybe" href="#valdef-display-auto" id="ref-for-valdef-display-auto-3">auto</a>.</p>
+        <li data-md="">
+         <p>It is <a class="css" data-link-type="maybe" href="#valdef-display-block" id="ref-for-valdef-display-block-2">block</a> and the <a class="css" data-link-type="maybe" href="#valdef-display-list-item" id="ref-for-valdef-display-list-item-4">list-item</a> or <a class="css" data-link-type="maybe" href="#valdef-display-flow-root" id="ref-for-valdef-display-flow-root-3">flow-root</a> keywords were specified.</p>
+        <li data-md="">
+         <p>The <a data-link-type="dfn" href="#outer-display-type" id="ref-for-outer-display-type-4">outer display type</a> is <a data-link-type="dfn" href="#layout-internal" id="ref-for-layout-internal-1">layout-internal</a>.</p>
+       </ul>
       <li data-md="">
-       <p>The <a class="css" data-link-type="maybe" href="#valdef-display-flow-root" id="ref-for-valdef-display-flow-root-3">flow-root</a> keyword, if specified.</p>
+       <p>The <a class="css" data-link-type="maybe" href="#valdef-display-flow-root" id="ref-for-valdef-display-flow-root-4">flow-root</a> keyword, if specified.</p>
      </ul>
    </ul>
    <p>The following informative table summarizes the basic values of <a class="property" data-link-type="propdesc" href="#propdef-display" id="ref-for-propdef-display-11">display</a>:</p>
@@ -547,12 +555,12 @@ which dictates how the box participates in its parent formatting context.</p>
       <td>element replaced by contents in <a data-link-type="dfn" href="#box-tree" id="ref-for-box-tree-6">box tree</a> 
     <tbody title="Flow Layout Display Types">
      <tr>
-      <td><a class="css" data-link-type="maybe" href="#valdef-display-block" id="ref-for-valdef-display-block-2">block</a> 
+      <td><a class="css" data-link-type="maybe" href="#valdef-display-block" id="ref-for-valdef-display-block-3">block</a> 
       <td><span class="css">block-level block</span> 
       <td><a data-link-type="dfn" href="#block-level" id="ref-for-block-level-1">block-level</a> <a data-link-type="dfn" href="#block-container" id="ref-for-block-container-1">block container</a> <abbr title="also known as">aka</abbr> <a data-link-type="dfn" href="#block-box" id="ref-for-block-box-1">block box</a> 
      <tr>
-      <td><a class="css" data-link-type="maybe" href="#valdef-display-flow-root" id="ref-for-valdef-display-flow-root-4">flow-root</a> 
-      <td><span class="css">block-level auto flow-root</span> 
+      <td><a class="css" data-link-type="maybe" href="#valdef-display-flow-root" id="ref-for-valdef-display-flow-root-5">flow-root</a> 
+      <td><span class="css">block-level block flow-root</span> 
       <td><a data-link-type="dfn" href="#block-level" id="ref-for-block-level-2">block-level</a> <a data-link-type="dfn" href="#block-container" id="ref-for-block-container-2">block container</a> that establishes a new <a data-link-type="dfn" href="#block-formatting-context" id="ref-for-block-formatting-context-1">block formatting context</a> (<a data-link-type="dfn" href="#bfc" id="ref-for-bfc-1">BFC</a>) 
      <tr>
       <td><a class="css" data-link-type="maybe" href="#valdef-display-inline" id="ref-for-valdef-display-inline-1">inline</a> 
@@ -567,8 +575,8 @@ which dictates how the box participates in its parent formatting context.</p>
       <td><span class="css">run-in auto</span> 
       <td><a data-link-type="dfn" href="#run-in" id="ref-for-run-in-1">run-in box</a> (<a data-link-type="dfn" href="#inline-box" id="ref-for-inline-box-2">inline box</a> with special box-tree-munging rules) 
      <tr>
-      <td><a class="css" data-link-type="maybe" href="#valdef-display-list-item" id="ref-for-valdef-display-list-item-4">list-item</a> 
-      <td><span class="css">list-item block-level auto</span> 
+      <td><a class="css" data-link-type="maybe" href="#valdef-display-list-item" id="ref-for-valdef-display-list-item-5">list-item</a> 
+      <td><span class="css">list-item block-level block</span> 
       <td><a data-link-type="dfn" href="#block-box" id="ref-for-block-box-2">block box</a> with additional <a href="https://www.w3.org/TR/CSS2/generate.html#lists">marker box</a> 
      <tr>
       <td><a class="css" data-link-type="maybe" href="#valdef-display-inline-list-item" id="ref-for-valdef-display-inline-list-item-1">inline-list-item</a> 
@@ -634,7 +642,7 @@ which dictates how the box participates in its parent formatting context.</p>
 	the element’s <a data-link-type="dfn" href="#inner-display-type" id="ref-for-inner-display-type-7">inner display type</a> defaults to <a class="css" data-link-type="maybe" href="#valdef-display-auto" id="ref-for-valdef-display-auto-4">auto</a>.</p>
    <p>If the element has an <a data-link-type="dfn" href="#inner-display-type" id="ref-for-inner-display-type-8">inner display type</a> that generates multiple boxes,
 	such as <a class="css" data-link-type="maybe" href="#valdef-display-table" id="ref-for-valdef-display-table-2">table</a> or <a class="css" data-link-type="maybe" href="#valdef-display-ruby" id="ref-for-valdef-display-ruby-5">ruby</a>, the <a data-link-type="dfn" href="#outer-display-type" id="ref-for-outer-display-type-6">outer display type</a> applies to the <a data-link-type="dfn" href="#principal-box" id="ref-for-principal-box-1">principal box</a>.</p>
-   <h3 class="heading settled" data-level="2.2" id="inner-model"><span class="secno">2.2. </span><span class="content"> Inner Display Layout Models: the <a class="css" data-link-type="maybe" href="#valdef-display-auto" id="ref-for-valdef-display-auto-5">auto</a>, <a class="css" data-link-type="maybe" href="#valdef-display-block" id="ref-for-valdef-display-block-3">block</a>, <a class="css" data-link-type="maybe" href="#valdef-display-table" id="ref-for-valdef-display-table-3">table</a>, <a class="css" data-link-type="maybe" href="#valdef-display-flex" id="ref-for-valdef-display-flex-2">flex</a>, <a class="css" data-link-type="maybe" href="#valdef-display-grid" id="ref-for-valdef-display-grid-2">grid</a>, and <a class="css" data-link-type="maybe" href="#valdef-display-ruby" id="ref-for-valdef-display-ruby-6">ruby</a> keywords</span><a class="self-link" href="#inner-model"></a></h3>
+   <h3 class="heading settled" data-level="2.2" id="inner-model"><span class="secno">2.2. </span><span class="content"> Inner Display Layout Models: the <a class="css" data-link-type="maybe" href="#valdef-display-auto" id="ref-for-valdef-display-auto-5">auto</a>, <a class="css" data-link-type="maybe" href="#valdef-display-block" id="ref-for-valdef-display-block-4">block</a>, <a class="css" data-link-type="maybe" href="#valdef-display-table" id="ref-for-valdef-display-table-3">table</a>, <a class="css" data-link-type="maybe" href="#valdef-display-flex" id="ref-for-valdef-display-flex-2">flex</a>, <a class="css" data-link-type="maybe" href="#valdef-display-grid" id="ref-for-valdef-display-grid-2">grid</a>, and <a class="css" data-link-type="maybe" href="#valdef-display-ruby" id="ref-for-valdef-display-ruby-6">ruby</a> keywords</span><a class="self-link" href="#inner-model"></a></h3>
    <p>The <a class="production css" data-link-type="type" href="#typedef-display-inside" id="ref-for-typedef-display-inside-3" title="Expands to: flex | auto | grid | table | ruby | block">&lt;display-inside></a> keywords specify the element’s <a data-link-type="dfn" href="#inner-display-type" id="ref-for-inner-display-type-9">inner display type</a>,
 	which defines the type of formatting context that lays out its contents
 	(assuming it is a <a href="https://www.w3.org/TR/CSS2/conform.html#replaced-element">non-replaced</a> element).
@@ -644,7 +652,7 @@ which dictates how the box participates in its parent formatting context.</p>
     <dd>
       If (after <a data-link-type="dfn" href="#inlinify" id="ref-for-inlinify-2">inlinifying</a> or <a data-link-type="dfn" href="#blockify" id="ref-for-blockify-2">blockifying</a>, when applicable)
 			the element’s <a data-link-type="dfn" href="#outer-display-type" id="ref-for-outer-display-type-7">outer display type</a> is <a class="css" data-link-type="maybe" href="#valdef-display-block-level" id="ref-for-valdef-display-block-level-4">block-level</a>,
-			then <a class="css" data-link-type="maybe" href="#valdef-display-auto" id="ref-for-valdef-display-auto-6">auto</a> is changed to <a class="css" data-link-type="maybe" href="#valdef-display-block" id="ref-for-valdef-display-block-4">block</a>, and <a class="property" data-link-type="propdesc" href="#propdef-display" id="ref-for-propdef-display-16">display</a> computes accordingly. 
+			then <a class="css" data-link-type="maybe" href="#valdef-display-auto" id="ref-for-valdef-display-auto-6">auto</a> is changed to <a class="css" data-link-type="maybe" href="#valdef-display-block" id="ref-for-valdef-display-block-5">block</a>, and <a class="property" data-link-type="propdesc" href="#propdef-display" id="ref-for-propdef-display-16">display</a> computes accordingly. 
      <p>Otherwise, the element generates an <a data-link-type="dfn" href="#inline-box" id="ref-for-inline-box-4">inline box</a>.</p>
     <dt><dfn class="dfn-paneled css" data-dfn-for="display, <display-inside>" data-dfn-type="value" data-export="" id="valdef-display-block">block</dfn> 
     <dd>
@@ -673,34 +681,32 @@ which dictates how the box participates in its parent formatting context.</p>
    </dl>
    <p>If a <a class="production css" data-link-type="type" href="#typedef-display-inside" id="ref-for-typedef-display-inside-4" title="Expands to: flex | auto | grid | table | ruby | block">&lt;display-inside></a> value is specified but <a class="production css" data-link-type="type" href="#typedef-display-outside" id="ref-for-typedef-display-outside-5" title="Expands to: run-in | block-level | inline-level">&lt;display-outside></a> is omitted,
 	the element’s <a data-link-type="dfn" href="#outer-display-type" id="ref-for-outer-display-type-9">outer display type</a> defaults to <a class="css" data-link-type="maybe" href="#valdef-display-block-level" id="ref-for-valdef-display-block-level-5">block-level</a>—<wbr>except for <a class="css" data-link-type="maybe" href="#valdef-display-ruby" id="ref-for-valdef-display-ruby-7">ruby</a> and <a class="css" data-link-type="maybe" href="#valdef-display-auto" id="ref-for-valdef-display-auto-8">auto</a>, which default to <a class="css" data-link-type="maybe" href="#valdef-display-inline-level" id="ref-for-valdef-display-inline-level-4">inline-level</a>.</p>
-   <h3 class="heading settled" data-level="2.3" id="flow-root"><span class="secno">2.3. </span><span class="content"> Becoming a formatting context: the <a class="css" data-link-type="maybe" href="#valdef-display-flow-root" id="ref-for-valdef-display-flow-root-5">flow-root</a> keyword</span><a class="self-link" href="#flow-root"></a></h3>
+   <h3 class="heading settled" data-level="2.3" id="flow-root"><span class="secno">2.3. </span><span class="content"> Becoming a formatting context: the <a class="css" data-link-type="maybe" href="#valdef-display-flow-root" id="ref-for-valdef-display-flow-root-6">flow-root</a> keyword</span><a class="self-link" href="#flow-root"></a></h3>
    <p>The <dfn class="dfn-paneled css" data-dfn-for="display, <display-flow-root>" data-dfn-type="value" data-export="" id="valdef-display-flow-root">flow-root</dfn> keyword
 	causes the element to <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" data-lt="become a formatting context|becomes a formatting context|becoming a formatting context" id="become-a-formatting-context">become a <a data-link-type="dfn" href="#formatting-context" id="ref-for-formatting-context-5">formatting context</a></dfn>.
 	If the element’s <a data-link-type="dfn" href="#inner-display-type" id="ref-for-inner-display-type-10">inner display type</a> is <a class="css" data-link-type="maybe" href="#valdef-display-table" id="ref-for-valdef-display-table-4">table</a>, <a class="css" data-link-type="maybe" href="#valdef-display-flex" id="ref-for-valdef-display-flex-3">flex</a>, <a class="css" data-link-type="maybe" href="#valdef-display-grid" id="ref-for-valdef-display-grid-3">grid</a>,
 	this condition is satisfied.
-	Otherwise, if the element’s <a data-link-type="dfn" href="#inner-display-type" id="ref-for-inner-display-type-11">inner display type</a> is <a class="css" data-link-type="maybe" href="#valdef-display-auto" id="ref-for-valdef-display-auto-9">auto</a>, <a class="css" data-link-type="maybe" href="#valdef-display-block" id="ref-for-valdef-display-block-5">block</a> or <a class="css" data-link-type="maybe" href="#valdef-display-ruby" id="ref-for-valdef-display-ruby-8">ruby</a>,
+	Otherwise, if the element’s <a data-link-type="dfn" href="#inner-display-type" id="ref-for-inner-display-type-11">inner display type</a> is <a class="css" data-link-type="maybe" href="#valdef-display-auto" id="ref-for-valdef-display-auto-9">auto</a>, <a class="css" data-link-type="maybe" href="#valdef-display-block" id="ref-for-valdef-display-block-6">block</a> or <a class="css" data-link-type="maybe" href="#valdef-display-ruby" id="ref-for-valdef-display-ruby-8">ruby</a>,
 	the <a data-link-type="dfn" href="#principal-box" id="ref-for-principal-box-2">principal box</a> becomes a <a data-link-type="dfn" href="#block-container" id="ref-for-block-container-5">block container</a> which establishes a <a data-link-type="dfn" href="#bfc" id="ref-for-bfc-2">BFC</a>.
 	This change does not affect the <a data-link-type="dfn" href="https://drafts.csswg.org/css-cascade-4/#computed-value">computed value</a> of the <a class="property" data-link-type="propdesc" href="#propdef-display" id="ref-for-propdef-display-17">display</a> property.</p>
-   <p>If no <a class="production css" data-link-type="type" href="#typedef-display-inside" id="ref-for-typedef-display-inside-5" title="Expands to: flex | auto | grid | table | ruby | block">&lt;display-inside></a> value is specified,
-	the element’s <a data-link-type="dfn" href="#inner-display-type" id="ref-for-inner-display-type-12">inner display type</a> defaults to <a class="css" data-link-type="maybe" href="#valdef-display-auto" id="ref-for-valdef-display-auto-10">auto</a>.
-	If no <a class="production css" data-link-type="type" href="#typedef-display-outside" id="ref-for-typedef-display-outside-6" title="Expands to: run-in | block-level | inline-level">&lt;display-outside></a> value is specified,
-	the element’s <a data-link-type="dfn" href="#inner-display-type" id="ref-for-inner-display-type-13">inner display type</a> defaults to <a class="css" data-link-type="maybe" href="#valdef-display-block-level" id="ref-for-valdef-display-block-level-6">block-level</a>.</p>
-   <p>In some circumstances, an element may <a data-link-type="dfn" href="#become-a-formatting-context" id="ref-for-become-a-formatting-context-2">become a formatting context</a> by other means than the <a class="css" data-link-type="maybe" href="#valdef-display-flow-root" id="ref-for-valdef-display-flow-root-6">flow-root</a> keyword
+   <p>If the <a class="css" data-link-type="maybe" href="#valdef-display-flow-root" id="ref-for-valdef-display-flow-root-7">flow-root</a> keyword is specified and both <a class="production css" data-link-type="type" href="#typedef-display-outside" id="ref-for-typedef-display-outside-6" title="Expands to: run-in | block-level | inline-level">&lt;display-outside></a> and <a class="production css" data-link-type="type" href="#typedef-display-inside" id="ref-for-typedef-display-inside-5" title="Expands to: flex | auto | grid | table | ruby | block">&lt;display-inside></a> are omitted,
+	the element’s <a data-link-type="dfn" href="#inner-display-type" id="ref-for-inner-display-type-12">inner display type</a> defaults to <a class="css" data-link-type="maybe" href="#valdef-display-block" id="ref-for-valdef-display-block-7">block</a>.
+	If only one <a data-link-type="dfn" href="#display-type" id="ref-for-display-type-2">display type</a> is ommitted, it defaults as usual.</p>
+   <p>In some circumstances, an element may <a data-link-type="dfn" href="#become-a-formatting-context" id="ref-for-become-a-formatting-context-2">become a formatting context</a> by other means than the <a class="css" data-link-type="maybe" href="#valdef-display-flow-root" id="ref-for-valdef-display-flow-root-8">flow-root</a> keyword
 	(see <a data-link-type="biblio" href="#biblio-css-contain-1">[CSS-CONTAIN-1]</a> or <a data-link-type="biblio" href="#biblio-css3-multicol">[CSS3-MULTICOL]</a> for examples).</p>
-   <p class="note" role="note"><span>Note:</span> the <a class="css" data-link-type="maybe" href="#valdef-display-flow-root" id="ref-for-valdef-display-flow-root-7">flow-root</a> keyword usually has no effect on an <a class="css" data-link-type="maybe" href="#valdef-display-inline-block" id="ref-for-valdef-display-inline-block-2">inline-block</a>,
-	because it already establishes a BFC. But if that box is blockified, with <a class="css" data-link-type="maybe" href="#valdef-display-flow-root" id="ref-for-valdef-display-flow-root-8">flow-root</a> the resulting <a data-link-type="dfn" href="#block-box" id="ref-for-block-box-4">block box</a> will continue establishing a BFC. Without <a class="css" data-link-type="maybe" href="#valdef-display-flow-root" id="ref-for-valdef-display-flow-root-9">flow-root</a>, it might
+   <p class="note" role="note"><span>Note:</span> the <a class="css" data-link-type="maybe" href="#valdef-display-flow-root" id="ref-for-valdef-display-flow-root-9">flow-root</a> keyword usually has no effect on an <a class="css" data-link-type="maybe" href="#valdef-display-inline-block" id="ref-for-valdef-display-inline-block-2">inline-block</a>,
+	because it already establishes a BFC. But if that box is blockified, with <a class="css" data-link-type="maybe" href="#valdef-display-flow-root" id="ref-for-valdef-display-flow-root-10">flow-root</a> the resulting <a data-link-type="dfn" href="#block-box" id="ref-for-block-box-4">block box</a> will continue establishing a BFC. Without <a class="css" data-link-type="maybe" href="#valdef-display-flow-root" id="ref-for-valdef-display-flow-root-11">flow-root</a>, it might
 	integrate its contents into its parent BFC instead.</p>
-   <p class="issue" id="issue-edbd7787"><a class="self-link" href="#issue-edbd7787"></a> How should an element with a <a data-link-type="dfn" href="#layout-internal" id="ref-for-layout-internal-2">layout-internal</a> <a data-link-type="dfn" href="#inner-display-type" id="ref-for-inner-display-type-14">inner display type</a> behave when <a data-link-type="dfn" href="#become-a-formatting-context" id="ref-for-become-a-formatting-context-3">becoming a formatting context</a>?</p>
-   <p class="issue" id="issue-f47d65c8"><a class="self-link" href="#issue-f47d65c8"></a> Should the <a class="css" data-link-type="maybe" href="#valdef-display-flow-root" id="ref-for-valdef-display-flow-root-10">flow-root</a> keyword be allowed in <a class="production css" data-link-type="type" href="#typedef-display-internal" id="ref-for-typedef-display-internal-3" title="Expands to: table-row-group | ruby-base-container | table-header-group | table-footer-group | table-column | ruby-text-container | ruby-base | ruby-text | table-row | table-caption | table-cell | table-column-group">&lt;display-internal></a>?
+   <p class="issue" id="issue-edbd7787"><a class="self-link" href="#issue-edbd7787"></a> How should an element with a <a data-link-type="dfn" href="#layout-internal" id="ref-for-layout-internal-2">layout-internal</a> <a data-link-type="dfn" href="#inner-display-type" id="ref-for-inner-display-type-13">inner display type</a> behave when <a data-link-type="dfn" href="#become-a-formatting-context" id="ref-for-become-a-formatting-context-3">becoming a formatting context</a>?</p>
+   <p class="issue" id="issue-f47d65c8"><a class="self-link" href="#issue-f47d65c8"></a> Should the <a class="css" data-link-type="maybe" href="#valdef-display-flow-root" id="ref-for-valdef-display-flow-root-12">flow-root</a> keyword be allowed in <a class="production css" data-link-type="type" href="#typedef-display-internal" id="ref-for-typedef-display-internal-3" title="Expands to: table-row-group | ruby-base-container | table-header-group | table-footer-group | table-column | ruby-text-container | ruby-base | ruby-text | table-row | table-caption | table-cell | table-column-group">&lt;display-internal></a>?
 	It might be useful in case the element is <a data-link-type="dfn" href="#blockify" id="ref-for-blockify-3">blockified</a>.</p>
-   <h3 class="heading settled" data-level="2.4" id="list-items"><span class="secno">2.4. </span><span class="content"> Generating Marker Boxes: the <a class="css" data-link-type="maybe" href="#valdef-display-list-item" id="ref-for-valdef-display-list-item-5">list-item</a> keyword</span><a class="self-link" href="#list-items"></a></h3>
+   <h3 class="heading settled" data-level="2.4" id="list-items"><span class="secno">2.4. </span><span class="content"> Generating Marker Boxes: the <a class="css" data-link-type="maybe" href="#valdef-display-list-item" id="ref-for-valdef-display-list-item-6">list-item</a> keyword</span><a class="self-link" href="#list-items"></a></h3>
    <p>The <dfn class="dfn-paneled css" data-dfn-for="display, <display-list-item>" data-dfn-type="value" data-export="" id="valdef-display-list-item">list-item</dfn> keyword
 	causes the element to generate a <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-pseudo-4/#selectordef-marker">::marker</a> pseudo-element box <a data-link-type="biblio" href="#biblio-css-pseudo-4">[CSS-PSEUDO-4]</a> with the content specified by its <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-lists-3/#propdef-list-style">list-style</a> properties
 	(<a href="https://www.w3.org/TR/CSS2/generate.html#lists">CSS 2.1§12.5 Lists</a>) <a data-link-type="biblio" href="#biblio-css2">[CSS2]</a> together with a principal box of the specified type for its own contents.</p>
-   <p>If no <a data-link-type="dfn" href="#inner-display-type" id="ref-for-inner-display-type-15">inner display type</a> value is specified,
-	the principal box’s <a data-link-type="dfn" href="#inner-display-type" id="ref-for-inner-display-type-16">inner display type</a> defaults to <a class="css" data-link-type="maybe" href="#valdef-display-auto" id="ref-for-valdef-display-auto-11">auto</a>.
-	If no <a data-link-type="dfn" href="#outer-display-type" id="ref-for-outer-display-type-10">outer display type</a> value is specified,
-	the principal box’s <a data-link-type="dfn" href="#outer-display-type" id="ref-for-outer-display-type-11">outer display type</a> defaults to <a class="css" data-link-type="maybe" href="#valdef-display-block-level" id="ref-for-valdef-display-block-level-7">block-level</a>.</p>
+   <p>If the <a class="css" data-link-type="maybe" href="#valdef-display-list-item" id="ref-for-valdef-display-list-item-7">list-item</a> keyword is specified and both <a class="production css" data-link-type="type" href="#typedef-display-outside" id="ref-for-typedef-display-outside-7" title="Expands to: run-in | block-level | inline-level">&lt;display-outside></a> and <a class="production css" data-link-type="type" href="#typedef-display-inside" id="ref-for-typedef-display-inside-6" title="Expands to: flex | auto | grid | table | ruby | block">&lt;display-inside></a> are omitted,
+	the element’s <a data-link-type="dfn" href="#inner-display-type" id="ref-for-inner-display-type-14">inner display type</a> defaults to <a class="css" data-link-type="maybe" href="#valdef-display-block" id="ref-for-valdef-display-block-8">block</a>.
+	If only one <a data-link-type="dfn" href="#display-type" id="ref-for-display-type-3">display type</a> is ommitted, it defaults as usual.</p>
    <p class="note" role="note"><span>Note:</span> In this level, as restricted in the grammar,
 	a list-item can only be a block box,
 	a block formatting context root box,
@@ -714,7 +720,7 @@ which dictates how the box participates in its parent formatting context.</p>
 	This section defines those “<dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" id="layout-internal">layout-internal</dfn>” <a class="property" data-link-type="propdesc" href="#propdef-display" id="ref-for-propdef-display-18">display</a> values,
 	which only have meaning within that particular layout mode.</p>
    <p>Unless otherwise specified,
-	both the <a data-link-type="dfn" href="#inner-display-type" id="ref-for-inner-display-type-17">inner display type</a> and the <a data-link-type="dfn" href="#outer-display-type" id="ref-for-outer-display-type-12">outer display type</a> of elements using these <a class="property" data-link-type="propdesc" href="#propdef-display" id="ref-for-propdef-display-19">display</a> values
+	both the <a data-link-type="dfn" href="#inner-display-type" id="ref-for-inner-display-type-15">inner display type</a> and the <a data-link-type="dfn" href="#outer-display-type" id="ref-for-outer-display-type-10">outer display type</a> of elements using these <a class="property" data-link-type="propdesc" href="#propdef-display" id="ref-for-propdef-display-19">display</a> values
 	are set to the given keyword.</p>
    <p>The <a class="production css" data-link-type="type" href="#typedef-display-internal" id="ref-for-typedef-display-internal-4" title="Expands to: table-row-group | ruby-base-container | table-header-group | table-footer-group | table-column | ruby-text-container | ruby-base | ruby-text | table-row | table-caption | table-cell | table-column-group">&lt;display-internal></a> keywords are defined as follows:</p>
    <dl>
@@ -723,19 +729,19 @@ which dictates how the box participates in its parent formatting context.</p>
       The element is an <dfn class="dfn-paneled" data-dfn-for="" data-dfn-type="dfn" data-noexport="" id="internal-table-element">internal table element</dfn>.
 			It generates the appropriate <dfn data-dfn-for="" data-dfn-type="dfn" data-noexport="" id="internal-table-box">internal table box<a class="self-link" href="#internal-table-box"></a></dfn> which participates in a <a data-link-type="dfn">table formatting context</a>.
 			See <a href="https://www.w3.org/TR/CSS2/tables.html#table-display">CSS2§17.2</a> <a data-link-type="biblio" href="#biblio-css2">[CSS2]</a>. 
-     <p><a class="css" data-link-type="maybe" href="#valdef-display-table-cell" id="ref-for-valdef-display-table-cell-1">table-cell</a> boxes have a <a class="css" data-link-type="maybe" href="#valdef-display-block" id="ref-for-valdef-display-block-6">block</a> <a data-link-type="dfn" href="#inner-display-type" id="ref-for-inner-display-type-18">inner display type</a>.</p>
+     <p><a class="css" data-link-type="maybe" href="#valdef-display-table-cell" id="ref-for-valdef-display-table-cell-1">table-cell</a> boxes have a <a class="css" data-link-type="maybe" href="#valdef-display-block" id="ref-for-valdef-display-block-9">block</a> <a data-link-type="dfn" href="#inner-display-type" id="ref-for-inner-display-type-16">inner display type</a>.</p>
     <dt><dfn class="dfn-paneled css" data-dfn-for="display, <display-internal>" data-dfn-type="value" data-export="" id="valdef-display-table-caption">table-caption</dfn> 
     <dd>
       The element generates a <dfn data-dfn-for="" data-dfn-type="dfn" data-noexport="" id="table-caption-box">table caption box<a class="self-link" href="#table-caption-box"></a></dfn>,
 			which is a <a data-link-type="dfn" href="#block-box" id="ref-for-block-box-5">block box</a> with special behavior with respect to table and table wrapper boxes.
 			See <a href="https://www.w3.org/TR/CSS2/tables.html#table-display">CSS2§17.2</a> <a data-link-type="biblio" href="#biblio-css2">[CSS2]</a>. 
-     <p><a class="css" data-link-type="maybe" href="#valdef-display-table-caption" id="ref-for-valdef-display-table-caption-1">table-caption</a> boxes have a <a class="css" data-link-type="maybe" href="#valdef-display-block" id="ref-for-valdef-display-block-7">block</a> <a data-link-type="dfn" href="#inner-display-type" id="ref-for-inner-display-type-19">inner display type</a>.</p>
+     <p><a class="css" data-link-type="maybe" href="#valdef-display-table-caption" id="ref-for-valdef-display-table-caption-1">table-caption</a> boxes have a <a class="css" data-link-type="maybe" href="#valdef-display-block" id="ref-for-valdef-display-block-10">block</a> <a data-link-type="dfn" href="#inner-display-type" id="ref-for-inner-display-type-17">inner display type</a>.</p>
     <dt>
     <dt><dfn class="dfn-paneled css" data-dfn-for="display, <display-internal>" data-dfn-type="value" data-export="" id="valdef-display-ruby-base">ruby-base</dfn>, <dfn class="dfn-paneled css" data-dfn-for="display, <display-internal>" data-dfn-type="value" data-export="" id="valdef-display-ruby-text">ruby-text</dfn>, <dfn class="css" data-dfn-for="display, <display-internal>" data-dfn-type="value" data-export="" id="valdef-display-ruby-base-container">ruby-base-container<a class="self-link" href="#valdef-display-ruby-base-container"></a></dfn>, <dfn class="css" data-dfn-for="display, <display-internal>" data-dfn-type="value" data-export="" id="valdef-display-ruby-text-container">ruby-text-container<a class="self-link" href="#valdef-display-ruby-text-container"></a></dfn> 
     <dd>
       The element is an <dfn data-dfn-for="" data-dfn-type="dfn" data-noexport="" id="internal-ruby-element">internal ruby element<a class="self-link" href="#internal-ruby-element"></a></dfn>.
 			It generates the appropriate <dfn data-dfn-for="" data-dfn-type="dfn" data-noexport="" id="internal-ruby-box">internal ruby box<a class="self-link" href="#internal-ruby-box"></a></dfn> which participates in a <a data-link-type="dfn" href="https://drafts.csswg.org/css-ruby-1/#ruby-formatting-context">ruby formatting context</a>. <a data-link-type="biblio" href="#biblio-css3ruby">[CSS3RUBY]</a> 
-     <p><a class="css" data-link-type="maybe" href="#valdef-display-ruby-base" id="ref-for-valdef-display-ruby-base-1">ruby-base</a> and <a class="css" data-link-type="maybe" href="#valdef-display-ruby-text" id="ref-for-valdef-display-ruby-text-1">ruby-text</a> have an <a class="css" data-link-type="maybe" href="#valdef-display-auto" id="ref-for-valdef-display-auto-12">auto</a> <a data-link-type="dfn" href="#inner-display-type" id="ref-for-inner-display-type-20">inner display type</a>.</p>
+     <p><a class="css" data-link-type="maybe" href="#valdef-display-ruby-base" id="ref-for-valdef-display-ruby-base-1">ruby-base</a> and <a class="css" data-link-type="maybe" href="#valdef-display-ruby-text" id="ref-for-valdef-display-ruby-text-1">ruby-text</a> have an <a class="css" data-link-type="maybe" href="#valdef-display-auto" id="ref-for-valdef-display-auto-10">auto</a> <a data-link-type="dfn" href="#inner-display-type" id="ref-for-inner-display-type-18">inner display type</a>.</p>
    </dl>
    <p>Boxes with layout-specific display types generate anonymous wrapper boxes around themselves
 	when placed in an incompatible parent,
@@ -804,7 +810,7 @@ which dictates how the box participates in its parent formatting context.</p>
     <dt><dfn class="dfn-paneled css" data-dfn-for="display, <display-box>" data-dfn-type="value" data-export="" id="valdef-display-none">none</dfn> 
     <dd> The element and its descendants generate no boxes. 
    </dl>
-   <p>Elements with either of these values do not have <a data-link-type="dfn" href="#inner-display-type" id="ref-for-inner-display-type-21">inner</a> or <a data-link-type="dfn" href="#outer-display-type" id="ref-for-outer-display-type-13">outer display types</a>,
+   <p>Elements with either of these values do not have <a data-link-type="dfn" href="#inner-display-type" id="ref-for-inner-display-type-19">inner</a> or <a data-link-type="dfn" href="#outer-display-type" id="ref-for-outer-display-type-11">outer display types</a>,
 	because they don’t generate any boxes at all.</p>
    <p class="note" role="note"><span>Note:</span> As these values cause affected elements to not generate a box,
 	anonymous box generation rules will ignore the elided elements entirely,
@@ -835,8 +841,8 @@ which dictates how the box participates in its parent formatting context.</p>
    </dl>
    <h3 class="heading settled" data-level="2.8" id="transformations"><span class="secno">2.8. </span><span class="content"> Automatic Box Type Transformations</span><a class="self-link" href="#transformations"></a></h3>
    <p>Some layout effects require <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" data-lt="blockify|blockification" id="blockify">blockification</dfn> or <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" data-lt="inlinify|inlinification" id="inlinify">inlinification</dfn> of the box type,
-	which sets the box’s <a data-link-type="dfn" href="#outer-display-type" id="ref-for-outer-display-type-14">outer display type</a> to <a class="css" data-link-type="maybe" href="#valdef-display-block-level" id="ref-for-valdef-display-block-level-8">block-level</a> or <a class="css" data-link-type="maybe" href="#valdef-display-inline-level" id="ref-for-valdef-display-inline-level-6">inline-level</a> (respectively).
-	(This has no effects on <a data-link-type="dfn" href="#display-type" id="ref-for-display-type-2">display types</a> that generate no box at all,
+	which sets the box’s <a data-link-type="dfn" href="#outer-display-type" id="ref-for-outer-display-type-12">outer display type</a> to <a class="css" data-link-type="maybe" href="#valdef-display-block-level" id="ref-for-valdef-display-block-level-6">block-level</a> or <a class="css" data-link-type="maybe" href="#valdef-display-inline-level" id="ref-for-valdef-display-inline-level-6">inline-level</a> (respectively).
+	(This has no effects on <a data-link-type="dfn" href="#display-type" id="ref-for-display-type-4">display types</a> that generate no box at all,
 	such as <a class="css" data-link-type="maybe" href="#valdef-display-none" id="ref-for-valdef-display-none-6">none</a> or <a class="css" data-link-type="maybe" href="#valdef-display-contents" id="ref-for-valdef-display-contents-5">contents</a>.)</p>
    <div class="example" id="example-baf1dddd">
     <a class="self-link" href="#example-baf1dddd"></a> Some examples of this include: 
@@ -851,12 +857,12 @@ which dictates how the box participates in its parent formatting context.</p>
 	so that no block-level descendants
 	break up the inline formatting context in which it participates.</p>
    <p>If a <a data-link-type="dfn" href="#layout-internal" id="ref-for-layout-internal-3">layout-internal</a> box is <a data-link-type="dfn" href="#blockify" id="ref-for-blockify-6">blockified</a>,
-	its <a data-link-type="dfn" href="#inner-display-type" id="ref-for-inner-display-type-22">inner display type</a> converts to <a class="css" data-link-type="maybe" href="#valdef-display-auto" id="ref-for-valdef-display-auto-13">auto</a> so that it becomes a <a data-link-type="dfn" href="#block-container" id="ref-for-block-container-6">block container</a>.</p>
+	its <a data-link-type="dfn" href="#inner-display-type" id="ref-for-inner-display-type-20">inner display type</a> converts to <a class="css" data-link-type="maybe" href="#valdef-display-auto" id="ref-for-valdef-display-auto-11">auto</a> so that it becomes a <a data-link-type="dfn" href="#block-container" id="ref-for-block-container-6">block container</a>.</p>
    <p class="issue" id="issue-43ae6483"><a class="self-link" href="#issue-43ae6483"></a> Should conversion of layout-internal display types also happen for inlinification?
-	If it does, should it change to <a class="css" data-link-type="maybe" href="#valdef-display-auto" id="ref-for-valdef-display-auto-14">auto</a> or <a class="css" data-link-type="maybe" href="#valdef-display-block" id="ref-for-valdef-display-block-8">block</a>?
+	If it does, should it change to <a class="css" data-link-type="maybe" href="#valdef-display-auto" id="ref-for-valdef-display-auto-12">auto</a> or <a class="css" data-link-type="maybe" href="#valdef-display-block" id="ref-for-valdef-display-block-11">block</a>?
 	If it doesn’t, then anonymous-box fixup will handle things.</p>
    <p>The root element’s display type is always <a data-link-type="dfn" href="#blockify" id="ref-for-blockify-7">blockified</a>.
-	Additionally, a <a class="property" data-link-type="propdesc" href="#propdef-display" id="ref-for-propdef-display-26">display</a> of <a class="css" data-link-type="maybe" href="#valdef-display-contents" id="ref-for-valdef-display-contents-6">contents</a> computes to <a class="css" data-link-type="maybe" href="#valdef-display-block" id="ref-for-valdef-display-block-9">block</a> on the root element.</p>
+	Additionally, a <a class="property" data-link-type="propdesc" href="#propdef-display" id="ref-for-propdef-display-26">display</a> of <a class="css" data-link-type="maybe" href="#valdef-display-contents" id="ref-for-valdef-display-contents-6">contents</a> computes to <a class="css" data-link-type="maybe" href="#valdef-display-block" id="ref-for-valdef-display-block-12">block</a> on the root element.</p>
    <h2 class="heading settled" data-level="3" id="run-in-layout"><span class="secno">3. </span><span class="content"> Run-In Layout</span><a class="self-link" href="#run-in-layout"></a></h2>
    <p>A <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" data-lt="run-in | run-in box" id="run-in">run-in box</dfn> is a box that <em>merges into</em> a block that comes after it,
 	inserting itself at the beginning of that block’s inline-level content.
@@ -907,7 +913,7 @@ with explanations; a brief dictionary.
     <li> Otherwise,
 			an anonymous block box is generated around the <a data-link-type="dfn" href="#run-in-sequence" id="ref-for-run-in-sequence-2">run-in sequence</a> and all immediately following inline-level content
 			(up to, but not including, the next <a data-link-type="dfn" href="#run-in-sequence" id="ref-for-run-in-sequence-3">run-in sequence</a>, if any). 
-    <li> A <a data-link-type="dfn" href="#run-in" id="ref-for-run-in-4">run-in box</a> with an <a class="css" data-link-type="maybe" href="#valdef-display-auto" id="ref-for-valdef-display-auto-15">auto</a> <a data-link-type="dfn" href="#inner-display-type" id="ref-for-inner-display-type-23">inner display type</a> <a data-link-type="dfn" href="#inlinify" id="ref-for-inlinify-6">inlinifies</a> its contents. 
+    <li> A <a data-link-type="dfn" href="#run-in" id="ref-for-run-in-4">run-in box</a> with an <a class="css" data-link-type="maybe" href="#valdef-display-auto" id="ref-for-valdef-display-auto-13">auto</a> <a data-link-type="dfn" href="#inner-display-type" id="ref-for-inner-display-type-21">inner display type</a> <a data-link-type="dfn" href="#inlinify" id="ref-for-inlinify-6">inlinifies</a> its contents. 
    </ul>
    <p>A <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport="" id="run-in-sequence">run-in sequence</dfn> is a maximal sequence of consecutive sibling <a data-link-type="dfn" href="#run-in" id="ref-for-run-in-5">run-in boxes</a> and intervening white space and/or out-of-flow boxes.</p>
    <p class="note" role="note"><span>Note:</span> This statement implies that out-of-flow boxes are reparented
@@ -930,7 +936,7 @@ with explanations; a brief dictionary.
 			which contains its descendant boxes and generated content,
 			and is also the box involved in any positioning scheme. 
      <p>Some elements may generate additional boxes in addition to the principal box
-			(such as <a class="css" data-link-type="maybe" href="#valdef-display-list-item" id="ref-for-valdef-display-list-item-6">list-item</a> elements,
+			(such as <a class="css" data-link-type="maybe" href="#valdef-display-list-item" id="ref-for-valdef-display-list-item-8">list-item</a> elements,
 			which generate an additional marker box,
 			or <a class="css" data-link-type="maybe" href="#valdef-display-table" id="ref-for-valdef-display-table-6">table</a> elements,
 			which generate a <a data-link-type="dfn" href="#principal-box" id="ref-for-principal-box-4">principal</a> <a data-link-type="dfn" href="https://drafts.csswg.org/css2/tables.html#table-wrapper-box">table wrapper box</a> and an additional <a data-link-type="dfn" href="https://drafts.csswg.org/css2/tables.html#table-box">table box</a>.
@@ -942,7 +948,7 @@ with explanations; a brief dictionary.
     <dd> Content that participates in block layout.
 			Specifically, block-level boxes. 
     <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" id="inline-box">inline box</dfn> 
-    <dd> A non-replaced <a data-link-type="dfn" href="#inline-level" id="ref-for-inline-level-6">inline-level</a> box whose <a data-link-type="dfn" href="#inner-display-type" id="ref-for-inner-display-type-24">inner display type</a> is <a class="css" data-link-type="maybe" href="#valdef-display-auto" id="ref-for-valdef-display-auto-16">auto</a>.
+    <dd> A non-replaced <a data-link-type="dfn" href="#inline-level" id="ref-for-inline-level-6">inline-level</a> box whose <a data-link-type="dfn" href="#inner-display-type" id="ref-for-inner-display-type-22">inner display type</a> is <a class="css" data-link-type="maybe" href="#valdef-display-auto" id="ref-for-valdef-display-auto-14">auto</a>.
 			The contents of an inline box participate in the same inline formatting context as the inline box itself. 
     <dt><dfn data-dfn-type="dfn" data-export="" id="inline">inline<a class="self-link" href="#inline"></a></dfn> 
     <dd> Used as a shorthand for <a data-link-type="dfn" href="#inline-box" id="ref-for-inline-box-5">inline box</a> or <a data-link-type="dfn" href="#inline-level-box" id="ref-for-inline-level-box-2">inline-level box</a> where unambiguous,
@@ -954,7 +960,7 @@ with explanations; a brief dictionary.
 			or that establishes a new formatting context (such as an <a class="css" data-link-type="maybe" href="#valdef-display-inline-block" id="ref-for-valdef-display-inline-block-3">inline-block</a> or <a class="css" data-link-type="maybe" href="#valdef-display-inline-table" id="ref-for-valdef-display-inline-table-2">inline-table</a>)
 			and cannot split across lines
 			(as <a data-link-type="dfn" href="#inline-box" id="ref-for-inline-box-6">inline boxes</a> and <a data-link-type="dfn" href="https://drafts.csswg.org/css-ruby-1/#ruby-container">ruby containers</a> can). 
-     <p>Any inline-level box whose <a data-link-type="dfn" href="#inner-display-type" id="ref-for-inner-display-type-25">inner display type</a> is not <a class="css" data-link-type="maybe" href="#valdef-display-auto" id="ref-for-valdef-display-auto-17">auto</a> establishes a new formatting context of the specified <a data-link-type="dfn" href="#inner-display-type" id="ref-for-inner-display-type-26">inner display type</a>.</p>
+     <p>Any inline-level box whose <a data-link-type="dfn" href="#inner-display-type" id="ref-for-inner-display-type-23">inner display type</a> is not <a class="css" data-link-type="maybe" href="#valdef-display-auto" id="ref-for-valdef-display-auto-15">auto</a> establishes a new formatting context of the specified <a data-link-type="dfn" href="#inner-display-type" id="ref-for-inner-display-type-24">inner display type</a>.</p>
     <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" data-lt="block container|block container box" id="block-container">block container</dfn> 
     <dd>
       A block container either contains only inline-level boxes
@@ -1138,7 +1144,7 @@ and hoists its contents up to display in its place.</p>
     <li>Clarified that an element’s <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-pseudo-4/#selectordef-before">::before</a> and <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-pseudo-4/#selectordef-after">::after</a> pseudo-elements still exist if its own box is not generated due to <a class="css" data-link-type="propdesc" href="#propdef-display" id="ref-for-propdef-display-42">display: contents</a>. 
     <li>Clarified that event bubbling is not affected by <a class="css" data-link-type="propdesc" href="#propdef-display" id="ref-for-propdef-display-43">display: contents</a>. 
     <li>Clarified interaction of run-ins with out-of-flow elements and <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-pseudo-4/#selectordef-first-letter">::first-letter</a>. 
-    <li>Switched <a class="css" data-link-type="maybe" href="#valdef-display-table-caption" id="ref-for-valdef-display-table-caption-2">table-caption</a> and <a class="css" data-link-type="maybe" href="#valdef-display-table-cell" id="ref-for-valdef-display-table-cell-3">table-cell</a> to use <a class="css" data-link-type="maybe" href="#valdef-display-flow-root" id="ref-for-valdef-display-flow-root-11">flow-root</a> as their <a data-link-type="dfn" href="#inner-display-type" id="ref-for-inner-display-type-27">inner display type</a>, since they always form a formatting context root. 
+    <li>Switched <a class="css" data-link-type="maybe" href="#valdef-display-table-caption" id="ref-for-valdef-display-table-caption-2">table-caption</a> and <a class="css" data-link-type="maybe" href="#valdef-display-table-cell" id="ref-for-valdef-display-table-cell-3">table-cell</a> to use <a class="css" data-link-type="maybe" href="#valdef-display-flow-root" id="ref-for-valdef-display-flow-root-13">flow-root</a> as their <a data-link-type="dfn" href="#inner-display-type" id="ref-for-inner-display-type-25">inner display type</a>, since they always form a formatting context root. 
     <li>Closed off remaining issues and added at-risk list. 
     <li>Added the definition of <a data-link-type="dfn" href="#become-a-formatting-context" id="ref-for-become-a-formatting-context-4">becoming a formatting context</a> 
    </ul>
@@ -1153,7 +1159,7 @@ and hoists its contents up to display in its place.</p>
 			(This was done to impose constraints on what can be combined.
 			Future levels of this specification may relax some or all of those restrictions
 			if they become unnecessary or unwanted.) 
-    <li>Created the <span class="css">flow</span> and <a class="css" data-link-type="maybe" href="#valdef-display-flow-root" id="ref-for-valdef-display-flow-root-12">flow-root</a> <a data-link-type="dfn" href="#inner-display-type" id="ref-for-inner-display-type-28">inner display types</a> to better express flow layout <a data-link-type="dfn" href="#display-type" id="ref-for-display-type-3">display types</a> and to create an explicit switch for making an element a <a data-link-type="dfn" href="#bfc" id="ref-for-bfc-3">BFC</a> root.
+    <li>Created the <span class="css">flow</span> and <a class="css" data-link-type="maybe" href="#valdef-display-flow-root" id="ref-for-valdef-display-flow-root-14">flow-root</a> <a data-link-type="dfn" href="#inner-display-type" id="ref-for-inner-display-type-26">inner display types</a> to better express flow layout <a data-link-type="dfn" href="#display-type" id="ref-for-display-type-5">display types</a> and to create an explicit switch for making an element a <a data-link-type="dfn" href="#bfc" id="ref-for-bfc-3">BFC</a> root.
 			(This should eliminate the need for hacks
 			like <span class="css">::after { clear: both; }</span> and <a class="css" data-link-type="propdesc" href="https://drafts.csswg.org/css2/visufx.html#propdef-overflow">overflow: hidden</a> that are intended to accomplish this purpose.) 
    </ul>
@@ -1646,9 +1652,13 @@ Automatic Box Type Transformations</a> <a href="#ref-for-propdef-display-26">(2)
    <ul>
     <li><a href="#ref-for-display-type-1">2. 
 Box Layout Modes: the display property</a>
-    <li><a href="#ref-for-display-type-2">2.8. 
+    <li><a href="#ref-for-display-type-2">2.3. 
+Becoming a formatting context: the flow-root keyword</a>
+    <li><a href="#ref-for-display-type-3">2.4. 
+Generating Marker Boxes: the list-item keyword</a>
+    <li><a href="#ref-for-display-type-4">2.8. 
 Automatic Box Type Transformations</a>
-    <li><a href="#ref-for-display-type-3"> Changes</a>
+    <li><a href="#ref-for-display-type-5"> Changes</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="inner-display-type">
@@ -1661,19 +1671,19 @@ Outer Display Roles for Flow Layout: the block-level, inline-level, and run-in k
     <li><a href="#ref-for-inner-display-type-9">2.2. 
 Inner Display Layout Models: the auto, block, table, flex, grid, and ruby keywords</a>
     <li><a href="#ref-for-inner-display-type-10">2.3. 
-Becoming a formatting context: the flow-root keyword</a> <a href="#ref-for-inner-display-type-11">(2)</a> <a href="#ref-for-inner-display-type-12">(3)</a> <a href="#ref-for-inner-display-type-13">(4)</a> <a href="#ref-for-inner-display-type-14">(5)</a>
-    <li><a href="#ref-for-inner-display-type-15">2.4. 
-Generating Marker Boxes: the list-item keyword</a> <a href="#ref-for-inner-display-type-16">(2)</a>
-    <li><a href="#ref-for-inner-display-type-17">2.5. 
-Layout-Internal Display Types: the table-* and ruby-* keywords</a> <a href="#ref-for-inner-display-type-18">(2)</a> <a href="#ref-for-inner-display-type-19">(3)</a> <a href="#ref-for-inner-display-type-20">(4)</a>
-    <li><a href="#ref-for-inner-display-type-21">2.6. 
+Becoming a formatting context: the flow-root keyword</a> <a href="#ref-for-inner-display-type-11">(2)</a> <a href="#ref-for-inner-display-type-12">(3)</a> <a href="#ref-for-inner-display-type-13">(4)</a>
+    <li><a href="#ref-for-inner-display-type-14">2.4. 
+Generating Marker Boxes: the list-item keyword</a>
+    <li><a href="#ref-for-inner-display-type-15">2.5. 
+Layout-Internal Display Types: the table-* and ruby-* keywords</a> <a href="#ref-for-inner-display-type-16">(2)</a> <a href="#ref-for-inner-display-type-17">(3)</a> <a href="#ref-for-inner-display-type-18">(4)</a>
+    <li><a href="#ref-for-inner-display-type-19">2.6. 
 Box Generation: the none and contents keywords</a>
-    <li><a href="#ref-for-inner-display-type-22">2.8. 
+    <li><a href="#ref-for-inner-display-type-20">2.8. 
 Automatic Box Type Transformations</a>
-    <li><a href="#ref-for-inner-display-type-23">3. 
+    <li><a href="#ref-for-inner-display-type-21">3. 
 Run-In Layout</a>
-    <li><a href="#ref-for-inner-display-type-24"> Appendix A: Glossary</a> <a href="#ref-for-inner-display-type-25">(2)</a> <a href="#ref-for-inner-display-type-26">(3)</a>
-    <li><a href="#ref-for-inner-display-type-27"> Changes</a> <a href="#ref-for-inner-display-type-28">(2)</a>
+    <li><a href="#ref-for-inner-display-type-22"> Appendix A: Glossary</a> <a href="#ref-for-inner-display-type-23">(2)</a> <a href="#ref-for-inner-display-type-24">(3)</a>
+    <li><a href="#ref-for-inner-display-type-25"> Changes</a> <a href="#ref-for-inner-display-type-26">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="outer-display-type">
@@ -1685,13 +1695,11 @@ Box Layout Modes: the display property</a> <a href="#ref-for-outer-display-type-
 Outer Display Roles for Flow Layout: the block-level, inline-level, and run-in keywords</a> <a href="#ref-for-outer-display-type-6">(2)</a>
     <li><a href="#ref-for-outer-display-type-7">2.2. 
 Inner Display Layout Models: the auto, block, table, flex, grid, and ruby keywords</a> <a href="#ref-for-outer-display-type-8">(2)</a> <a href="#ref-for-outer-display-type-9">(3)</a>
-    <li><a href="#ref-for-outer-display-type-10">2.4. 
-Generating Marker Boxes: the list-item keyword</a> <a href="#ref-for-outer-display-type-11">(2)</a>
-    <li><a href="#ref-for-outer-display-type-12">2.5. 
+    <li><a href="#ref-for-outer-display-type-10">2.5. 
 Layout-Internal Display Types: the table-* and ruby-* keywords</a>
-    <li><a href="#ref-for-outer-display-type-13">2.6. 
+    <li><a href="#ref-for-outer-display-type-11">2.6. 
 Box Generation: the none and contents keywords</a>
-    <li><a href="#ref-for-outer-display-type-14">2.8. 
+    <li><a href="#ref-for-outer-display-type-12">2.8. 
 Automatic Box Type Transformations</a>
    </ul>
   </aside>
@@ -1706,6 +1714,8 @@ Outer Display Roles for Flow Layout: the block-level, inline-level, and run-in k
 Inner Display Layout Models: the auto, block, table, flex, grid, and ruby keywords</a>
     <li><a href="#ref-for-typedef-display-outside-6">2.3. 
 Becoming a formatting context: the flow-root keyword</a>
+    <li><a href="#ref-for-typedef-display-outside-7">2.4. 
+Generating Marker Boxes: the list-item keyword</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="typedef-display-inside">
@@ -1719,6 +1729,8 @@ Outer Display Roles for Flow Layout: the block-level, inline-level, and run-in k
 Inner Display Layout Models: the auto, block, table, flex, grid, and ruby keywords</a> <a href="#ref-for-typedef-display-inside-4">(2)</a>
     <li><a href="#ref-for-typedef-display-inside-5">2.3. 
 Becoming a formatting context: the flow-root keyword</a>
+    <li><a href="#ref-for-typedef-display-inside-6">2.4. 
+Generating Marker Boxes: the list-item keyword</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="typedef-display-normal">
@@ -1773,11 +1785,7 @@ Box Layout Modes: the display property</a> <a href="#ref-for-valdef-display-bloc
 Outer Display Roles for Flow Layout: the block-level, inline-level, and run-in keywords</a>
     <li><a href="#ref-for-valdef-display-block-level-4">2.2. 
 Inner Display Layout Models: the auto, block, table, flex, grid, and ruby keywords</a> <a href="#ref-for-valdef-display-block-level-5">(2)</a>
-    <li><a href="#ref-for-valdef-display-block-level-6">2.3. 
-Becoming a formatting context: the flow-root keyword</a>
-    <li><a href="#ref-for-valdef-display-block-level-7">2.4. 
-Generating Marker Boxes: the list-item keyword</a>
-    <li><a href="#ref-for-valdef-display-block-level-8">2.8. 
+    <li><a href="#ref-for-valdef-display-block-level-6">2.8. 
 Automatic Box Type Transformations</a>
    </ul>
   </aside>
@@ -1829,31 +1837,31 @@ Outer Display Roles for Flow Layout: the block-level, inline-level, and run-in k
     <li><a href="#ref-for-valdef-display-auto-5">2.2. 
 Inner Display Layout Models: the auto, block, table, flex, grid, and ruby keywords</a> <a href="#ref-for-valdef-display-auto-6">(2)</a> <a href="#ref-for-valdef-display-auto-7">(3)</a> <a href="#ref-for-valdef-display-auto-8">(4)</a>
     <li><a href="#ref-for-valdef-display-auto-9">2.3. 
-Becoming a formatting context: the flow-root keyword</a> <a href="#ref-for-valdef-display-auto-10">(2)</a>
-    <li><a href="#ref-for-valdef-display-auto-11">2.4. 
-Generating Marker Boxes: the list-item keyword</a>
-    <li><a href="#ref-for-valdef-display-auto-12">2.5. 
+Becoming a formatting context: the flow-root keyword</a>
+    <li><a href="#ref-for-valdef-display-auto-10">2.5. 
 Layout-Internal Display Types: the table-* and ruby-* keywords</a>
-    <li><a href="#ref-for-valdef-display-auto-13">2.8. 
-Automatic Box Type Transformations</a> <a href="#ref-for-valdef-display-auto-14">(2)</a>
-    <li><a href="#ref-for-valdef-display-auto-15">3. 
+    <li><a href="#ref-for-valdef-display-auto-11">2.8. 
+Automatic Box Type Transformations</a> <a href="#ref-for-valdef-display-auto-12">(2)</a>
+    <li><a href="#ref-for-valdef-display-auto-13">3. 
 Run-In Layout</a>
-    <li><a href="#ref-for-valdef-display-auto-16"> Appendix A: Glossary</a> <a href="#ref-for-valdef-display-auto-17">(2)</a>
+    <li><a href="#ref-for-valdef-display-auto-14"> Appendix A: Glossary</a> <a href="#ref-for-valdef-display-auto-15">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="valdef-display-block">
    <b><a href="#valdef-display-block">#valdef-display-block</a></b><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-valdef-display-block-1">2. 
-Box Layout Modes: the display property</a> <a href="#ref-for-valdef-display-block-2">(2)</a>
-    <li><a href="#ref-for-valdef-display-block-3">2.2. 
-Inner Display Layout Models: the auto, block, table, flex, grid, and ruby keywords</a> <a href="#ref-for-valdef-display-block-4">(2)</a>
-    <li><a href="#ref-for-valdef-display-block-5">2.3. 
-Becoming a formatting context: the flow-root keyword</a>
-    <li><a href="#ref-for-valdef-display-block-6">2.5. 
-Layout-Internal Display Types: the table-* and ruby-* keywords</a> <a href="#ref-for-valdef-display-block-7">(2)</a>
-    <li><a href="#ref-for-valdef-display-block-8">2.8. 
-Automatic Box Type Transformations</a> <a href="#ref-for-valdef-display-block-9">(2)</a>
+Box Layout Modes: the display property</a> <a href="#ref-for-valdef-display-block-2">(2)</a> <a href="#ref-for-valdef-display-block-3">(3)</a>
+    <li><a href="#ref-for-valdef-display-block-4">2.2. 
+Inner Display Layout Models: the auto, block, table, flex, grid, and ruby keywords</a> <a href="#ref-for-valdef-display-block-5">(2)</a>
+    <li><a href="#ref-for-valdef-display-block-6">2.3. 
+Becoming a formatting context: the flow-root keyword</a> <a href="#ref-for-valdef-display-block-7">(2)</a>
+    <li><a href="#ref-for-valdef-display-block-8">2.4. 
+Generating Marker Boxes: the list-item keyword</a>
+    <li><a href="#ref-for-valdef-display-block-9">2.5. 
+Layout-Internal Display Types: the table-* and ruby-* keywords</a> <a href="#ref-for-valdef-display-block-10">(2)</a>
+    <li><a href="#ref-for-valdef-display-block-11">2.8. 
+Automatic Box Type Transformations</a> <a href="#ref-for-valdef-display-block-12">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="flow-layout">
@@ -1924,10 +1932,10 @@ Layout-Internal Display Types: the table-* and ruby-* keywords</a>
    <b><a href="#valdef-display-flow-root">#valdef-display-flow-root</a></b><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-valdef-display-flow-root-1">2. 
-Box Layout Modes: the display property</a> <a href="#ref-for-valdef-display-flow-root-2">(2)</a> <a href="#ref-for-valdef-display-flow-root-3">(3)</a> <a href="#ref-for-valdef-display-flow-root-4">(4)</a>
-    <li><a href="#ref-for-valdef-display-flow-root-5">2.3. 
-Becoming a formatting context: the flow-root keyword</a> <a href="#ref-for-valdef-display-flow-root-6">(2)</a> <a href="#ref-for-valdef-display-flow-root-7">(3)</a> <a href="#ref-for-valdef-display-flow-root-8">(4)</a> <a href="#ref-for-valdef-display-flow-root-9">(5)</a> <a href="#ref-for-valdef-display-flow-root-10">(6)</a>
-    <li><a href="#ref-for-valdef-display-flow-root-11"> Changes</a> <a href="#ref-for-valdef-display-flow-root-12">(2)</a>
+Box Layout Modes: the display property</a> <a href="#ref-for-valdef-display-flow-root-2">(2)</a> <a href="#ref-for-valdef-display-flow-root-3">(3)</a> <a href="#ref-for-valdef-display-flow-root-4">(4)</a> <a href="#ref-for-valdef-display-flow-root-5">(5)</a>
+    <li><a href="#ref-for-valdef-display-flow-root-6">2.3. 
+Becoming a formatting context: the flow-root keyword</a> <a href="#ref-for-valdef-display-flow-root-7">(2)</a> <a href="#ref-for-valdef-display-flow-root-8">(3)</a> <a href="#ref-for-valdef-display-flow-root-9">(4)</a> <a href="#ref-for-valdef-display-flow-root-10">(5)</a> <a href="#ref-for-valdef-display-flow-root-11">(6)</a> <a href="#ref-for-valdef-display-flow-root-12">(7)</a>
+    <li><a href="#ref-for-valdef-display-flow-root-13"> Changes</a> <a href="#ref-for-valdef-display-flow-root-14">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="become-a-formatting-context">
@@ -1944,10 +1952,10 @@ Becoming a formatting context: the flow-root keyword</a> <a href="#ref-for-becom
    <b><a href="#valdef-display-list-item">#valdef-display-list-item</a></b><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-valdef-display-list-item-1">2. 
-Box Layout Modes: the display property</a> <a href="#ref-for-valdef-display-list-item-2">(2)</a> <a href="#ref-for-valdef-display-list-item-3">(3)</a> <a href="#ref-for-valdef-display-list-item-4">(4)</a>
-    <li><a href="#ref-for-valdef-display-list-item-5">2.4. 
-Generating Marker Boxes: the list-item keyword</a>
-    <li><a href="#ref-for-valdef-display-list-item-6"> Appendix A: Glossary</a>
+Box Layout Modes: the display property</a> <a href="#ref-for-valdef-display-list-item-2">(2)</a> <a href="#ref-for-valdef-display-list-item-3">(3)</a> <a href="#ref-for-valdef-display-list-item-4">(4)</a> <a href="#ref-for-valdef-display-list-item-5">(5)</a>
+    <li><a href="#ref-for-valdef-display-list-item-6">2.4. 
+Generating Marker Boxes: the list-item keyword</a> <a href="#ref-for-valdef-display-list-item-7">(2)</a>
+    <li><a href="#ref-for-valdef-display-list-item-8"> Appendix A: Glossary</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="layout-internal">

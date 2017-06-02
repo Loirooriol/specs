@@ -175,7 +175,10 @@ Box Layout Modes: the 'display' property</h2>
 		* The <a>outer display type</a>, if none of the following holds:
 			* It is ''block-level'' and the <a>inner display type</a> is not ''ruby''.
 			* It is ''inline-level'' and the <a>inner display type</a> is ''ruby''.
-		* The <a>inner display type</a>, if it is not ''auto'' and the <a>outer display type</a> is not <a>layout-internal</a>.
+		* The <a>inner display type</a>, if none of the following holds:
+			* It is ''auto''.
+			* It is ''block'' and the ''list-item'' or ''flow-root'' keywords were specified.
+			* The <a>outer display type</a> is <a>layout-internal</a>.
 		* The ''flow-root'' keyword, if specified.
 
 	The following informative table summarizes the basic values of 'display':
@@ -207,7 +210,7 @@ Box Layout Modes: the 'display' property</h2>
 				    <abbr title="also known as">aka</abbr> <a>block box</a>
 			<tr>
 				<td>''flow-root''
-				<td>''block-level auto flow-root''
+				<td>''block-level block flow-root''
 				<td><a>block-level</a> <a>block container</a>
 				    that establishes a new <a>block formatting context</a> (<a>BFC</a>)
 			<tr>
@@ -224,7 +227,7 @@ Box Layout Modes: the 'display' property</h2>
 				<td><a>run-in box</a> (<a>inline box</a> with special box-tree-munging rules)
 			<tr>
 				<td>''list-item''
-				<td>''list-item block-level auto''
+				<td>''list-item block-level block''
 				<td><a>block box</a>
 				    with additional <a href="https://www.w3.org/TR/CSS2/generate.html#lists">marker box</a>
 			<tr>
@@ -399,10 +402,9 @@ Becoming a formatting context: the ''flow-root'' keyword</h3>
 	the <a>principal box</a> becomes a <a>block container</a> which establishes a <a>BFC</a>.
 	This change does not affect the <a>computed value</a> of the 'display' property.
 
-	If no <<display-inside>> value is specified,
-	the element's <a>inner display type</a> defaults to ''auto''.
-	If no <<display-outside>> value is specified,
-	the element's <a>inner display type</a> defaults to ''block-level''.
+	If the ''flow-root'' keyword is specified and both <<display-outside>> and <<display-inside>> are omitted,
+	the element's <a>inner display type</a> defaults to ''block''.
+	If only one <a>display type</a> is ommitted, it defaults as usual.
 
 	In some circumstances, an element may <a>become a formatting context</a>
 	by other means than the ''flow-root'' keyword
@@ -428,10 +430,9 @@ Generating Marker Boxes: the ''list-item'' keyword</h3>
 	(<a href="https://www.w3.org/TR/CSS2/generate.html#lists">CSS 2.1§12.5 Lists</a>) [[!CSS2]]
 	together with a principal box of the specified type for its own contents.
 
-	If no <a>inner display type</a> value is specified,
-	the principal box's <a>inner display type</a> defaults to ''auto''.
-	If no <a>outer display type</a> value is specified,
-	the principal box's <a>outer display type</a> defaults to ''block-level''.
+	If the ''list-item'' keyword is specified and both <<display-outside>> and <<display-inside>> are omitted,
+	the element's <a>inner display type</a> defaults to ''block''.
+	If only one <a>display type</a> is ommitted, it defaults as usual.
 
 	Note: In this level, as restricted in the grammar,
 	a list-item can only be a block box,

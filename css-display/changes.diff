@@ -1,5 +1,5 @@
 diff --git a/original.bs b/index.bs
-index ec64c9c..8a81d24 100644
+index ec64c9c..3103e35 100644
 --- a/original.bs
 +++ b/index.bs
 @@ -1,8 +1,8 @@
@@ -36,7 +36,7 @@ index ec64c9c..8a81d24 100644
  	Animatable: no
  	Media: all
  	</pre>
-@@ -137,27 +137,48 @@ Box Layout Modes: the 'display' property</h2>
+@@ -137,27 +137,51 @@ Box Layout Modes: the 'display' property</h2>
  	* the <dfn export local-lt="outer">outer display type</dfn>,
  		which dictates how the box participates in its parent formatting context.
  
@@ -86,14 +86,17 @@ index ec64c9c..8a81d24 100644
 +		* The <a>outer display type</a>, if none of the following holds:
 +			* It is ''block-level'' and the <a>inner display type</a> is not ''ruby''.
 +			* It is ''inline-level'' and the <a>inner display type</a> is ''ruby''.
-+		* The <a>inner display type</a>, if it is not ''auto'' and the <a>outer display type</a> is not <a>layout-internal</a>.
++		* The <a>inner display type</a>, if none of the following holds:
++			* It is ''auto''.
++			* It is ''block'' and the ''list-item'' or ''flow-root'' keywords were specified.
++			* The <a>outer display type</a> is <a>layout-internal</a>.
 +		* The ''flow-root'' keyword, if specified.
 +
 +	The following informative table summarizes the basic values of 'display':
  
  	<style>
  		#display-value-summary td,
-@@ -181,68 +202,68 @@ Box Layout Modes: the 'display' property</h2>
+@@ -181,68 +205,68 @@ Box Layout Modes: the 'display' property</h2>
  		<tbody title="Flow Layout Display Types">
  			<tr>
  				<td>''block''
@@ -104,7 +107,7 @@ index ec64c9c..8a81d24 100644
  			<tr>
  				<td>''flow-root''
 -				<td>''block flow-root''
-+				<td>''block-level auto flow-root''
++				<td>''block-level block flow-root''
  				<td><a>block-level</a> <a>block container</a>
  				    that establishes a new <a>block formatting context</a> (<a>BFC</a>)
  			<tr>
@@ -125,7 +128,7 @@ index ec64c9c..8a81d24 100644
  			<tr>
  				<td>''list-item''
 -				<td>''list-item block flow''
-+				<td>''list-item block-level auto''
++				<td>''list-item block-level block''
  				<td><a>block box</a>
  				    with additional <a href="https://www.w3.org/TR/CSS2/generate.html#lists">marker box</a>
  			<tr>
@@ -177,7 +180,7 @@ index ec64c9c..8a81d24 100644
  				<td><a>inline-level</a> <a>table wrapper box</a> containing <a>table box</a>
  		<tbody title="Layout-internal display types">
  			<!--
-@@ -274,19 +295,19 @@ Box Layout Modes: the 'display' property</h2>
+@@ -274,19 +298,19 @@ Box Layout Modes: the 'display' property</h2>
  	[[CSSOM]]
  
  <h3 id="outer-role">
@@ -200,7 +203,7 @@ index ec64c9c..8a81d24 100644
  		<dd>
  			The element generates an <dfn dfn for>inline-level box</dfn>
  			when placed in <a>flow layout</a>. [[!CSS2]]
-@@ -301,10 +322,14 @@ Outer Display Roles for Flow Layout: the ''block'', ''inline'', and ''run-in'' k
+@@ -301,10 +325,14 @@ Outer Display Roles for Flow Layout: the ''block'', ''inline'', and ''run-in'' k
  	</dl>
  
  	If a <<display-outside>> value is specified but <<display-inside>> is omitted,
@@ -217,7 +220,7 @@ index ec64c9c..8a81d24 100644
  
  	The <<display-inside>> keywords specify the element's <a>inner display type</a>,
  	which defines the type of formatting context that lays out its contents
-@@ -312,38 +337,32 @@ Inner Display Layout Models: the ''flow'', ''flow-root'', ''table'', ''flex'', '
+@@ -312,38 +340,32 @@ Inner Display Layout Models: the ''flow'', ''flow-root'', ''table'', ''flex'', '
  	They are defined as follows:
  
  	<dl dfn-type="value" dfn-for="display, <display-inside>">
@@ -270,7 +273,7 @@ index ec64c9c..8a81d24 100644
  			that establishes a <a>table formatting context</a>. [[!CSS2]]
  
  		<dt><dfn>flex</dfn>
-@@ -358,16 +377,47 @@ Inner Display Layout Models: the ''flow'', ''flow-root'', ''table'', ''flex'', '
+@@ -358,16 +380,46 @@ Inner Display Layout Models: the ''flow'', ''flow-root'', ''table'', ''flex'', '
  
  		<dt><dfn>ruby</dfn>
  		<dd>
@@ -302,10 +305,9 @@ index ec64c9c..8a81d24 100644
 +	the <a>principal box</a> becomes a <a>block container</a> which establishes a <a>BFC</a>.
 +	This change does not affect the <a>computed value</a> of the 'display' property.
 +
-+	If no <<display-inside>> value is specified,
-+	the element's <a>inner display type</a> defaults to ''auto''.
-+	If no <<display-outside>> value is specified,
-+	the element's <a>inner display type</a> defaults to ''block-level''.
++	If the ''flow-root'' keyword is specified and both <<display-outside>> and <<display-inside>> are omitted,
++	the element's <a>inner display type</a> defaults to ''block''.
++	If only one <a>display type</a> is ommitted, it defaults as usual.
 +
 +	In some circumstances, an element may <a>become a formatting context</a>
 +	by other means than the ''flow-root'' keyword
@@ -324,19 +326,21 @@ index ec64c9c..8a81d24 100644
  
  <h3 id="list-items">
  Generating Marker Boxes: the ''list-item'' keyword</h3>
-@@ -379,9 +429,9 @@ Generating Marker Boxes: the ''list-item'' keyword</h3>
+@@ -378,10 +430,9 @@ Generating Marker Boxes: the ''list-item'' keyword</h3>
+ 	(<a href="https://www.w3.org/TR/CSS2/generate.html#lists">CSS 2.1§12.5 Lists</a>) [[!CSS2]]
  	together with a principal box of the specified type for its own contents.
  
- 	If no <a>inner display type</a> value is specified,
+-	If no <a>inner display type</a> value is specified,
 -	the principal box's <a>inner display type</a> defaults to ''flow''.
-+	the principal box's <a>inner display type</a> defaults to ''auto''.
- 	If no <a>outer display type</a> value is specified,
+-	If no <a>outer display type</a> value is specified,
 -	the principal box's <a>outer display type</a> defaults to ''block''.
-+	the principal box's <a>outer display type</a> defaults to ''block-level''.
++	If the ''list-item'' keyword is specified and both <<display-outside>> and <<display-inside>> are omitted,
++	the element's <a>inner display type</a> defaults to ''block''.
++	If only one <a>display type</a> is ommitted, it defaults as usual.
  
  	Note: In this level, as restricted in the grammar,
  	a list-item can only be a block box,
-@@ -414,7 +464,7 @@ Layout-Internal Display Types: the ''table-*'' and ''ruby-*'' keywords</h3>
+@@ -414,7 +465,7 @@ Layout-Internal Display Types: the ''table-*'' and ''ruby-*'' keywords</h3>
  			which participates in a <a>table formatting context</a>.
  			See <a href="https://www.w3.org/TR/CSS2/tables.html#table-display">CSS2&sect;17.2</a> [[!CSS2]].
  
@@ -345,7 +349,7 @@ index ec64c9c..8a81d24 100644
  
  		<dt><dfn>table-caption</dfn>
  		<dd>
-@@ -422,7 +472,7 @@ Layout-Internal Display Types: the ''table-*'' and ''ruby-*'' keywords</h3>
+@@ -422,7 +473,7 @@ Layout-Internal Display Types: the ''table-*'' and ''ruby-*'' keywords</h3>
  			which is a <a>block box</a> with special behavior with respect to table and table wrapper boxes.
  			See <a href="https://www.w3.org/TR/CSS2/tables.html#table-display">CSS2&sect;17.2</a> [[!CSS2]].
  
@@ -354,7 +358,7 @@ index ec64c9c..8a81d24 100644
  		<dt>
  
  		<dt><dfn>ruby-base</dfn>, <dfn>ruby-text</dfn>, <dfn>ruby-base-container</dfn>, <dfn>ruby-text-container</dfn>
-@@ -431,7 +481,7 @@ Layout-Internal Display Types: the ''table-*'' and ''ruby-*'' keywords</h3>
+@@ -431,7 +482,7 @@ Layout-Internal Display Types: the ''table-*'' and ''ruby-*'' keywords</h3>
  			It generates the appropriate <dfn dfn for>internal ruby box</dfn>
  			which participates in a <a>ruby formatting context</a>. [[!CSS3RUBY]]
  
@@ -363,7 +367,7 @@ index ec64c9c..8a81d24 100644
  	</dl>
  
  	Boxes with layout-specific display types generate anonymous wrapper boxes around themselves
-@@ -553,21 +603,29 @@ Precomposed Inline-level Display Values</h3>
+@@ -553,21 +604,29 @@ Precomposed Inline-level Display Values</h3>
  	These <<display-legacy>> keywords map as follows:
  
  	<dl dfn-type=value dfn-for="display, <display-legacy>">
@@ -397,7 +401,7 @@ index ec64c9c..8a81d24 100644
  	</dl>
  
  <h3 id='transformations'>
-@@ -576,7 +634,7 @@ Automatic Box Type Transformations</h3>
+@@ -576,7 +635,7 @@ Automatic Box Type Transformations</h3>
  	Some layout effects require <dfn export lt="blockify|blockification">blockification</dfn>
  	or <dfn export lt="inlinify|inlinification">inlinification</dfn> of the box type,
  	which sets the box’s <a>outer display type</a>
@@ -406,7 +410,7 @@ index ec64c9c..8a81d24 100644
  	(This has no effects on <a>display types</a> that generate no box at all,
  	such as ''display/none'' or ''display/contents''.)
  
-@@ -590,20 +648,17 @@ Automatic Box Type Transformations</h3>
+@@ -590,20 +649,17 @@ Automatic Box Type Transformations</h3>
  		</ul>
  	</div>
  
@@ -430,7 +434,7 @@ index ec64c9c..8a81d24 100644
  	If it doesn't, then anonymous-box fixup will handle things.
  
  	The root element’s display type is always <a>blockified</a>.
-@@ -748,7 +803,7 @@ Run-In Layout</h2>
+@@ -748,7 +804,7 @@ Run-In Layout</h2>
  			(up to, but not including, the next <a>run-in sequence</a>, if any).
  
  		<li>
@@ -439,7 +443,7 @@ index ec64c9c..8a81d24 100644
  	</ul>
  
  	A <dfn>run-in sequence</dfn> is a maximal sequence of consecutive sibling <a>run-in boxes</a>
-@@ -767,16 +822,6 @@ Run-In Layout</h2>
+@@ -767,16 +823,6 @@ Run-In Layout</h2>
  
  	Note: This run-in model is slightly different from the one proposed in earlier revisions of [[!CSS2]].
  
@@ -456,7 +460,7 @@ index ec64c9c..8a81d24 100644
  
  <h2 id='glossary' class=no-num>
  Appendix A: Glossary</h2>
-@@ -811,7 +856,7 @@ Appendix A: Glossary</h2>
+@@ -811,7 +857,7 @@ Appendix A: Glossary</h2>
  
  		<dt><dfn>inline box</dfn>
  		<dd>
@@ -465,7 +469,7 @@ index ec64c9c..8a81d24 100644
  			The contents of an inline box participate in the same inline formatting context as the inline box itself.
  
  		<dt><dfn>inline</dfn>
-@@ -828,7 +873,7 @@ Appendix A: Glossary</h2>
+@@ -828,7 +874,7 @@ Appendix A: Glossary</h2>
  			and cannot split across lines
  			(as <a>inline boxes</a> and <a>ruby containers</a> can).
  
